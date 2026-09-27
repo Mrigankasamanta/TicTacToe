@@ -85,6 +85,11 @@ body{
     color: #76C457;
 }
 
+#msg2 {
+   font-size: 8vmin;
+    color: #c63d17;
+}
+
 #newGame {
     padding: 1rem;
     font-size: 1.5rem;
@@ -104,11 +109,29 @@ body{
 
 }
 
-.hide {
-    display: none;
-}
 
 h1{
     font-size: 7vmin;
     padding-top: 2vmin;
+}
+
+.tie{
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+#playAgain {
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: #010736;
+    color: #ffffff;
+    border-radius:1rem;
+    border: none;
+}
+.hide {
+    display: none;
 }

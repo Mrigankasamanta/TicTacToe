@@ -6,6 +6,8 @@ let result = document.querySelector(".result")
 let main = document.querySelector("main")
 let show = document.querySelector("#show")
 let buttons = document.querySelector(".buttons")
+let tie = document.querySelector(".tie")
+let playAgain = document.querySelector("#playAgain")
 
 
 let winPatterns = [
@@ -31,6 +33,7 @@ let newGame = () => {
     enableBoxes();
     result.classList.add("hide","msg_container");
     buttons.classList.add("new_buttons")
+    tie.classList.add("hide")
     result.classList.remove("new_msg_container")
     main.classList.remove("hide")
     reset.classList.remove("hide")
@@ -52,7 +55,6 @@ const enableBoxes = () => {
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
-        console.log("you clickl the button");
         if(turnO === true){
             box.innerText = "O";
             // box.classList.add("O");
@@ -64,8 +66,7 @@ boxes.forEach((box) => {
             turnO = true;
         }
         box.disabled = true;
-    checkWin();
-
+        checkWin();
     });
 });
 
@@ -74,7 +75,12 @@ const showWinner = (winner) => {
     result.classList.remove("hide");
     main.classList.add("hide")
     disableBoxes();
-}
+};
+
+const tieGame = () => {
+    tie.classList.remove("hide")
+    main.classList.add("hide")
+};
 
 const checkWin = () => {
     for(let pattern of winPatterns){
@@ -84,12 +90,21 @@ const checkWin = () => {
 
         if(firstVal != "" && secondVal != "" && thiredVal != ""){
             if(firstVal === secondVal && secondVal === thiredVal){
-                console.log("You win the game");
                 showWinner(firstVal);
+                return;
             };
         };
     };
-
+    let allFilled = true;
+    for(let box of boxes){
+        if (box.innerText === ""){
+            allFilled = false;
+            break;
+        };
+    };
+    if(allFilled){
+        tieGame();
+    };
 };
 
 reset.addEventListener("click",resetGame);
@@ -101,3 +116,5 @@ show.addEventListener("click", () =>{
     main.classList.remove("hide")
     reset.classList.add("hide")
 })
+
+playAgain.addEventListener("click", newGame)
