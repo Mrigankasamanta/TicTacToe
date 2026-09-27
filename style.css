@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color:#CCD5FF;
+    text-align: center;
+}
+.container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+    
+}
+
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.4);
+    font-size: 10vmin;
+    color: #C36795;
+    background-color: #7CC6FE;
+}
+
+#restart{
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: #010736;
+    color: #ffffff;
+    border-radius:1rem;
+    border: none;
+
+}
+
+.O{
+    color: #597928;
+}
+
+.msg_container{
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.new_msg_container{
+    height: 18vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.buttons{
+    display: flex;
+    gap: 5rem;
+}
+
+.new_buttons {
+    display:flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#msg {
+   font-size: 8vmin;
+    color: #76C457;
+}
+
+#newGame {
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: #010736;
+    color: #ffffff;
+    border-radius:1rem;
+    border: none;
+
+}
+#show {
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: #010736;
+    color: #ffffff;
+    border-radius:1rem;
+    border: none;
+
+}
+
+.hide {
+    display: none;
+}
+
+h1{
+    font-size: 7vmin;
+    padding-top: 2vmin;
+}
